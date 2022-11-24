@@ -1,6 +1,7 @@
 package com.zarwOo.leetcode.traversal;
 
-import org.testng.annotations.Test;
+
+import org.junit.Test;
 
 public class LeetCode200 {
     public int numIslands(char[][] grid) {
