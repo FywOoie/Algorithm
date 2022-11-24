@@ -35,7 +35,10 @@ public class LeetCode827 {
         }
 
         // 遍历海洋
-        int res = 0;
+        if(islandToArea.size() == 0){
+            return 1;
+        }
+        int res = islandToArea.get(2);
         for(int i = 0; i < N; ++i){
             for(int j = 0; j < N; ++j){
                 if(grid[i][j] == 0){
@@ -44,7 +47,7 @@ public class LeetCode827 {
                     for(Integer island : jointIslands){
                         tempArea += islandToArea.get(island);
                     }
-                    res = Math.max(res, tempArea);
+                    res = Math.max(res, tempArea + 1);
                 }
             }
         }
@@ -57,8 +60,8 @@ public class LeetCode827 {
             return 0;
         }
         grid[r][c] = this.islandIndex;
-        return 1 + dfs(grid, r, c) + dfs(grid, r, c)
-                + dfs(grid, r, c) + dfs(grid, r, c);
+        return 1 + dfs(grid, r - 1, c) + dfs(grid, r + 1, c)
+                + dfs(grid, r, c - 1) + dfs(grid, r, c + 1);
     }
 
     public boolean inArea(int[][] grid, int r, int c){
