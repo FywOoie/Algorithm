@@ -9,10 +9,11 @@ public class LeetCode827 {
         for(int i = 0; i < grid.length; ++i){
             for(int j = 0; j < grid[0].length; ++j){
                 if(grid[i][j] == 1){
-                    dfs()
+                    dfs(grid, i, j);
                 }
             }
         }
+        return res;
     }
     public int dfs(int[][] grid, int r, int c){
 
