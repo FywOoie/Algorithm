@@ -21,12 +21,27 @@ public class LeetCode142 {
             current = current.next;
         }
         return null;
+
+//        // 双指针
+//        if(head == null || head.next == null){
+//            return null; // 不可能有环
+//        }
+//        ListNode slow = head;
+//        ListNode fast = head.next;
+//        while(slow != fast){
+//            if(fast.next == null || fast.next.next == null){
+//                return null;
+//            }
+//            slow = slow.next;
+//            fast = fast.next.next;
+//        }
+//        return slow;
     }
 
     @Test
     public void testLeetCode142(){
         LeetCode142 solution = new LeetCode142();
-        ListNode test = Utils.generateListNode(4, true, 2);
+        ListNode test = Utils.generateListNode(5, true, 3);
         Utils.printListNode(test);
     }
 }
